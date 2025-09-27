@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses | Mr. Ramzi Arega</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Courses</h1>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰ Menu</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="materials.html">Materials</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+  
+  <script>
+    // JavaScript for mobile menu toggle
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("nav-links").classList.toggle("active");
+    });
+  </script>
+
+  <section>
+    <h2>Courses I Teach</h2>
+    <div class="card">
+      <h3>Computer Science 101</h3>
+      <p>Introduction to Programming – basics of C++, algorithms, and problem solving.</p>
+    </div>
+    <div class="card">
+      <h3>Artificial Intelligence</h3>
+      <p>Introduction to machine learning and deep learning concepts.</p>
+    </div>
+    <div class="card">
+      <h3>Data Structures</h3>
+      <p>Study of arrays, linked lists, stacks, queues, trees, and graphs.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ramzi Arega | Wollo University</p>
+  </footer>
+</body>
+</html>

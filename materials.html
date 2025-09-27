@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Materials | Mr. Ramzi Arega</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Course Materials</h1>
+    <p>Download outlines, lecture slides, and assignments for my courses</p>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰ Menu</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="materials.html">Materials</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Available Downloads</h2>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 Search for materials...">
+    </div>
+
+    <div class="materials-grid" id="materialsGrid">
+
+        <div class="card">
+            <h3>📘 Web Programming</h3>
+            <ul>
+              <li>
+                <a href="E:\CS course\Ramizer website\materials/web programming course outline 2018.pdf" download data-id="course1-outline">Course Outline</a>
+                <span class="view-count" id="count-course1-outline">0 views</span>
+              </li>
+              <li>
+                <a href="materials/lecture1-slides.pptx" download data-id="lecture1-slides">Lecture 1 Slides</a>
+                <span class="view-count" id="count-lecture1-slides">0 views</span>
+              </li>
+              <li>
+                <a href="materials/assignment1.docx" download data-id="assignment1">Assignment 1</a>
+                <span class="view-count" id="count-assignment1">0 views</span>
+              </li>
+            </ul>
+          </div>
+          
+
+      <div class="card">
+        <h3>🤖 Artificial Intelligence</h3>
+        <ul>
+            <li>
+                <a href="materials/lecture1-slides.pptx" download data-id="lecture1-slides">Artificial Intelligence</a>
+                <span class="view-count" id="count-lecture1-slides">0 views</span>
+              </li>
+              <li>
+                <a href="materials/assignment1.docx" download data-id="assignment1">Assignment 1</a>
+                <span class="view-count" id="count-assignment1">0 views</span>
+              </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>🗂 Data Structures</h3>
+        <ul>
+            <li>
+                <a href="materials/lecture1-slides.pptx" download data-id="lecture1-slides">Data Structure</a>
+                <span class="view-count" id="count-lecture1-slides">0 views</span>
+              </li>
+              <li>
+                <a href="materials/assignment1.docx" download data-id="assignment1">Datastructure Assignment 1</a>
+                <span class="view-count" id="count-assignment1">0 views</span>
+              </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ramzi Arega | Wollo University</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("nav-links").classList.toggle("active");
+    });
+
+    // Search filter
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      let filter = this.value.toLowerCase();
+      let cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+  </script>
+  <script>
+    // Mobile menu toggle
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("nav-links").classList.toggle("active");
+    });
+  
+    // Search filter
+    document.getElementById("searchInput").addEventListener("keyup", function() {
+      let filter = this.value.toLowerCase();
+      let cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+  
+    // ===== View Counter =====
+    const links = document.querySelectorAll(".card a");
+  
+    links.forEach(link => {
+      const id = link.dataset.id;
+  
+      // Load saved count from localStorage
+      let count = localStorage.getItem(id) || 0;
+      document.getElementById("count-" + id).innerText = count + " views";
+  
+      // Increment count on click
+      link.addEventListener("click", () => {
+        count++;
+        localStorage.setItem(id, count);
+        document.getElementById("count-" + id).innerText = count + " views";
+      });
+    });
+  </script>
+  
+</body>
+</html>
